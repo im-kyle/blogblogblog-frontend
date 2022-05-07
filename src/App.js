@@ -17,6 +17,7 @@ import ViewPost from './pages/ViewPost.js';
 export default function App() {
 return (
   <div>
+    <header className='App'>
     <main>
       <Navbar/>
           <Routes>
@@ -31,6 +32,7 @@ return (
             <Route path = '/viewpost' element = {<ViewPost />} />
           </Routes>
     </main>
+    </header>
   </div>
 );
 };

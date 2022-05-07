@@ -20,7 +20,7 @@ export default function ViewPost() {
     })
     .then(response => response.json())
     .then(data => {
-      console.log('Success', data);
+      console.log(data);
       setPostInfo(data)
     })
     .catch((error) => {
@@ -38,7 +38,7 @@ export default function ViewPost() {
     })
     .then(response => response.json())
     .then(data => {
-      console.log('Success', data);
+      console.log(data);
       setPostInfo(data)
     })
     .catch((error) => {
@@ -49,7 +49,7 @@ export default function ViewPost() {
 
   //If we have the post -> Render our view post page
   if (!postInfo){
-    if (location.state){
+    if (location?.state){
       return (
         <div>
 
@@ -59,7 +59,7 @@ export default function ViewPost() {
 
             <p>
               <label>TITLE:</label>
-              <input type='text' onChange={(e) => setTitle(e.target.value)} defaultValue={location.state.title}/>
+              <input type='text' onChange={(e) => setTitle(e.target.value)} defaultValue={location?.state?.title}/>
             </p>
 
             <button type='submit' onClick={submitHandler}> VIEW POST </button>
@@ -71,8 +71,8 @@ export default function ViewPost() {
   } else {
     return(
       <div>
-        <h1>{postInfo[0].title}</h1>
-        <p>{postInfo[0].content}</p>
+        <h1>{postInfo.title}</h1>
+        <p>{postInfo.content}</p>
       </div>
     )
   }
