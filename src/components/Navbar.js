@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import './navbar.css';
 
 export default function Navbar() {
-  const [userInfo, setUserInfo] = useState(localStorage.getItem("userInfo"))
+  const [userData, setUserData] = useState(localStorage.getItem("userData"))
 
-  if(userInfo) {
+  if(userData) {
     return(
       <div>
         <Link to='/'> HOME </Link>
@@ -13,6 +12,8 @@ export default function Navbar() {
         <Link to='/logout'> LOGOUT </Link>
         <br></br>
         <Link to='/myposts'> MyPOSTS </Link>
+        <br></br>
+        <Link to='/viewposts'> VIEW </Link>
         <br></br>
         <Link to='/createpost'> CREATE </Link>
         <br></br>
@@ -27,11 +28,11 @@ export default function Navbar() {
         <div>
           <Link to='/'> HOME </Link>
           <br></br>
-          <Link to='/'> LOGIN </Link>
+          <Link to='/login'> LOGIN </Link>
           <br></br>
-          <Link to='/'> REGISTER </Link>
+          <Link to='/register'> REGISTER </Link>
           <br></br>
-          <Link to='/'> VIEW POST </Link>
+          <Link to='/viewpost'> VIEW POST </Link>
         </div>
       )
     }
