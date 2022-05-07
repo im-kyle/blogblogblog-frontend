@@ -25,13 +25,13 @@ export default function Login() {
         },
         body: JSON.stringify({"username": username, "password": password}),
     })
-    .catch((error) => {
-        console.log(error);
-    })
     .then(response => response.json())
     .then(data => {
       if(data.user){localStorage.setItem('userData', JSON.stringify(data))}
       navigate('/');
+    })
+    .catch((error) => {
+        console.log(error);
     })
   };
   

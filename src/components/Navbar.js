@@ -1,8 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [userData, setUserData] = useState(localStorage.getItem("userData"))
+  const [reloadState, setReloadState] = useState(0)
+
+  useEffect(() => {
+    setReloadState(reloadState + 1)
+  }, [])
 
   if(userData) {
     return(

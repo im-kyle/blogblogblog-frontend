@@ -29,7 +29,7 @@ return (
             <Route path = '/deletepost' element = {<DeletePost />} />
             <Route path = '/logout' element = {<Logout />} />
             <Route path = '/editpost' element = {<EditPost />} />
-            <Route path = '/viewpost' element = {<ViewPost />} />
+            <Route path = '/viewposts' element = {<ViewPost />} />
           </Routes>
     </main>
     </header>
