@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import './pages/Pages.css';
 
 import Navbar from './components/Navbar.js';
 
@@ -16,8 +17,7 @@ import ViewPost from './pages/ViewPost.js';
 
 export default function App() {
 return (
-  <div>
-    <header className='App'>
+  <div className='center'>
     <main>
       <Navbar/>
           <Routes>
@@ -29,10 +29,9 @@ return (
             <Route path = '/deletepost' element = {<DeletePost />} />
             <Route path = '/logout' element = {<Logout />} />
             <Route path = '/editpost' element = {<EditPost />} />
-            <Route path = '/viewposts' element = {<ViewPost />} />
+            <Route path = '/viewpost' element = {<ViewPost />} />
           </Routes>
     </main>
-    </header>
   </div>
 );
 };

@@ -7,9 +7,8 @@ export default function ViewEditPost() {
   const location = useLocation();
   const navigate = useNavigate();
   const [title, setTitle] = useState()
-  const [postInfo,setPostInfo] = useState();
-  const [editContent,setEditContent] = useState();
-  const [stateTitle, setStateTitle] = useState();
+  const [postInfo, setPostInfo] = useState();
+  const [editContent, setEditContent] = useState();
   const [userData, setUserData] = useState(JSON.parse(localStorage.getItem("userData")))
 
   useEffect(() => {
@@ -70,7 +69,7 @@ export default function ViewEditPost() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({"title": title, "content": editContent, "user": userData.user})
+        body: JSON.stringify({"title": title, "content": editContent, "created_by": userData.user})
     })
     .then(response => response.json())
     .then(data => {
@@ -95,7 +94,7 @@ export default function ViewEditPost() {
 
               <p>
                 <label>Title:</label>
-                <input type='text' defaultValue = {location.state.title}/>
+                <input onChange={(e) => setTitle(e)} type='text' defaultValue = {location.state.title}/>
               </p>
 
               <button type='submit'> VIEW </button>
@@ -106,7 +105,7 @@ export default function ViewEditPost() {
     }
     else {
         return (
-            <div className="forms">
+            <div className='center'>
 
               <h1>View/Edit Post </h1>
 
@@ -126,15 +125,15 @@ export default function ViewEditPost() {
   }
   if (postInfo){
     return (
-        <div>
+        <div className='center'>
 
-          <h1>{postInfo[0].title}</h1>
+          <h1>{postInfo[0]?.title}</h1>
 
             <form onSubmit={editHandler}>
 
             <p>
               <label>Content:</label>
-              <input onChange={(e) => setEditContent(e.target.value)} type="text" defaultValue = {postInfo[0].content} />
+              <input onChange={(e) => setEditContent(e.target.value)} type="text" defaultValue = {postInfo[0]?.content} />
             </p>
 
             <button type='submit'> SUBMIT EDITS </button>

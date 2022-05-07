@@ -24,11 +24,11 @@ export default function DeletePost() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({"title": title,"user": userData.user}),
+          body: JSON.stringify({"title": title, "user": userData.user}),
         })
         .then(response => response.json())
         .then(data => {
-          console.log('Success', data);
+          console.log(data);
           navigate('/myposts')
         })
         .catch((error) => {

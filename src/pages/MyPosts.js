@@ -5,11 +5,12 @@ export default function MyPosts() {
 
   //React Hooks -> get userData from local storage. Fetch that userData from backend.
   const navigate = useNavigate();
-  const [posts, setPosts] = useState(false)
+  const [posts, setPosts] = useState([])
   const [userData, setUserData] = useState(JSON.parse(localStorage.getItem("userData")))
 
   useEffect(() => {
-      const userData = localStorage.getItem("userData");
+    const userData = localStorage.getItem("userData");
+    console.log(userData)
   }, [])
 
   useEffect(function(){
@@ -18,7 +19,6 @@ export default function MyPosts() {
       .then(response => setPosts([response]))
       .catch((err) => console.error(err))
   }, []);
-
 
   //Helper Functions & Event Handlers
   const checkLength = ((input) => {
@@ -33,11 +33,13 @@ export default function MyPosts() {
    console.log(i)
   }
 
+  console.log(posts);
+
   if (posts) {
     return (
       <div>
       <h1> MyPOSTS </h1>
-        {posts[0].map((posts, i) => {
+        {posts[0]?.map((posts) => {
           return(
             <div>
               <button onClick = {() => clickHandler(posts.title)}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Pages.css';
 
 export default function Register () {
 
@@ -30,7 +31,7 @@ export default function Register () {
   //Registration Form
     return(
       <div>
-        <h2>REGISTER AN ACCOUNT</h2>
+        <h1>REGISTER AN ACCOUNT</h1>
 
         <form onSubmit={submitHandler}>
 

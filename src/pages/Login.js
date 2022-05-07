@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './Pages.css';
 
 export default function Login() {
 
@@ -28,7 +29,7 @@ export default function Login() {
     .then(response => response.json())
     .then(data => {
       if(data.user){localStorage.setItem('userData', JSON.stringify(data))}
-      navigate('/');
+      navigate('/myposts');
     })
     .catch((error) => {
         console.log(error);
@@ -37,7 +38,7 @@ export default function Login() {
   
   //Render User Login Form
   return(
-    <div>
+    <div className='center'>
       <h1>LOGIN</h1>
 
       <form onSubmit={submitHandler}>
@@ -53,6 +54,8 @@ export default function Login() {
         </p>
 
         <button type='submit'> CLICK HERE TO LOGIN </button>
+
+        <p>Note: After login, you will need to refresh the page to gain full access to the site</p>
 
         <h4>NOT REGISTERED?</h4>
 

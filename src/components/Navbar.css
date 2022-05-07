@@ -1,0 +1,11 @@
+.Navbar{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+  margin: auto;
+  width: 100%;
+  background-color: hotpink;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: xx-large;
+}

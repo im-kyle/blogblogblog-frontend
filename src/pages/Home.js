@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Pages.css';
 
 export default function Home() {
   
@@ -36,23 +37,24 @@ export default function Home() {
   //If we've successfully pulled the data -> render the posts
   if (posts) {
     return(
-      <div>
-        <div>
-          <h1>All Posts</h1>
+      <>
+        <div className='home'>
+          <h1 className='title'>ALL POSTS</h1>
           {posts.map((posts, i) => {
             return(
               <div key={posts.id}>
                 {/* Place Entire Post Inside Button So Users Can Click Directly On The Post to View */}
-                <button onClick={() => selectPost(posts.title)}>
+                <button className='postButton' onClick={() => selectPost(posts.title)}>
                   <h3>{posts.title}</h3>
                   <p>{checkLength(posts.content)}</p>
                   <p>{posts.created_at}</p>
+                  <p>Author: {posts.created_by}</p>
                 </button>
               </div>
             )
           })}
         </div>
-      </div>
+      </>
     )
   } else {
     return <h1>LOADING POSTS... PLEASE WAIT</h1>

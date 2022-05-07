@@ -1,43 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 export default function Navbar() {
   const [userData, setUserData] = useState(localStorage.getItem("userData"))
-  const [reloadState, setReloadState] = useState(0)
+  const [forceUpdate, setForceUpdate] = useState(false);
 
   useEffect(() => {
-    setReloadState(reloadState + 1)
+    setForceUpdate(true)
   }, [])
 
-  if(userData) {
+  if(userData && forceUpdate) {
     return(
-      <div>
-        <Link to='/'> HOME </Link>
+      <div className='Navbar'>
+        BLOG!BLOG!BLOG!
         <br></br>
-        <Link to='/logout'> LOGOUT </Link>
-        <br></br>
-        <Link to='/myposts'> MyPOSTS </Link>
-        <br></br>
-        <Link to='/viewposts'> VIEW </Link>
-        <br></br>
-        <Link to='/createpost'> CREATE </Link>
-        <br></br>
-        <Link to='/editpost'> EDIT </Link>
-        <br></br>
+        <Link to='/'> HOME </Link> || 
+        <Link to='/logout'> LOGOUT </Link> ||
+        <Link to='/myposts'> MyPOSTS </Link> ||
+        {/* <Link to='/viewpost'> VIEW </Link>
+        <br></br> */}
+        <Link to='/createpost'> CREATE </Link> ||
+        <Link to='/editpost'> EDIT </Link> ||
         <Link to='/deletepost'> DELETE </Link>
       </div>
     )
   }
   else {
     return(
-        <div>
+        <div className='Navbar'>
           <Link to='/'> HOME </Link>
           <br></br>
           <Link to='/login'> LOGIN </Link>
           <br></br>
           <Link to='/register'> REGISTER </Link>
           <br></br>
-          <Link to='/viewpost'> VIEW POST </Link>
+          {/* <Link to='/viewpost'> VIEW POST </Link> */}
         </div>
       )
     }

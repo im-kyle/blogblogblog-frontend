@@ -24,7 +24,7 @@ export default function CreatePost() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({"title": title,"content": content,"created_by": userData.user}),
+        body: JSON.stringify({"title": title, "content": content, "created_by": userData.user}),
     })
     .then(response => response.json())
     .then(data => {
