@@ -10,7 +10,7 @@ export default function Home() {
   useEffect(() => {
     const userData = localStorage.getItem("userData");
 
-    fetch(`${process.env.REACT_APP_API_URL}/api/posts`)
+    fetch(`${process.env.REACT_APP_API_URL}/posts`)
     .then(res => res.json())
     .then(data => setPosts(data))
     .catch(err => console.log(err))
