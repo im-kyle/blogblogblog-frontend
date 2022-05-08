@@ -20,7 +20,7 @@ export default function Home() {
   const selectPost = (i) => {
     //Check to see if user is authenticated
     if (userData) {
-      navigate('/editpost', {state: {title: i}})
+      navigate('/viewpost', {state: {title: i}})
     } else {
       navigate('/viewpost', {state: {title: i}})
     }

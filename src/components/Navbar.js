@@ -1,16 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 export default function Navbar() {
   const [userData, setUserData] = useState(localStorage.getItem("userData"))
-  const [forceUpdate, setForceUpdate] = useState(false);
 
-  useEffect(() => {
-    setForceUpdate(true)
-  }, [])
-
-  if(userData && forceUpdate) {
+  if(userData) {
     return(
       <div className='Navbar'>
         BLOG!BLOG!BLOG!

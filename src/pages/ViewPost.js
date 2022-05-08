@@ -67,7 +67,7 @@ export default function ViewPost() {
 
             <p>
               <label>TITLE:</label>
-              <input type='text' onChange={(e) => setTitle(e.target.value)} defaultValue={location?.state?.title}/>
+              <input type='text' onChange={(e) => setTitle(e.target.value)} placeholder='Enter a post title'/>
             </p>
 
             <button type='submit' onClick={submitHandler}> VIEW POST </button>

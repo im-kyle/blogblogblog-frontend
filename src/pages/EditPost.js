@@ -22,7 +22,7 @@ export default function ViewEditPost() {
   //Event Handlers and Helper Functions
 
   //onSubmit -> GET post
-  const submitHandler = async (e) => {
+  const submitHandler = (e) => {
     e.preventDefault()
     fetch(`${process.env.REACT_APP_API_URL}/posts/specific/${title}`, {
         method: 'GET',
@@ -42,7 +42,7 @@ export default function ViewEditPost() {
   };
 
   //onClick -> GET post
-  const clickSubmitHandler = async (e) => {
+  const clickSubmitHandler = (e) => {
     e.preventDefault()
     fetch(`${process.env.REACT_APP_API_URL}/posts/specific/${location.state.title}`, {
         method: 'GET',
@@ -62,7 +62,7 @@ export default function ViewEditPost() {
   };
 
   //POST post changes to backend
-  const editHandler = async (e) => {
+  const editHandler = (e) => {
     e.preventDefault()
     fetch(`${process.env.REACT_APP_API_URL}/posts/edit`, {
         method: 'PATCH',

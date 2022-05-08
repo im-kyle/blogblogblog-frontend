@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './pages/Pages.css';
@@ -16,22 +15,23 @@ import EditPost from './pages/EditPost.js';
 import ViewPost from './pages/ViewPost.js';
 
 export default function App() {
-return (
-  <div className='center'>
-    <main>
-      <Navbar/>
-          <Routes>
-            <Route path = '/' element = {<Home />} />
-            <Route path = '/login' element = {<Login />} />
-            <Route path = '/register' element = {<Registration />} />
-            <Route path = '/myposts' element = {<MyPosts />} />
-            <Route path = '/createpost' element = {<CreatePost />} />
-            <Route path = '/deletepost' element = {<DeletePost />} />
-            <Route path = '/logout' element = {<Logout />} />
-            <Route path = '/editpost' element = {<EditPost />} />
-            <Route path = '/viewpost' element = {<ViewPost />} />
-          </Routes>
-    </main>
-  </div>
-);
+
+  return (
+    <div className='center'>
+      <main>
+        <Navbar/>
+            <Routes>
+              <Route path = '/' element = {<Home />} />
+              <Route path = '/login' element = {<Login/>} />
+              <Route path = '/register' element = {<Registration />} />
+              <Route path = '/myposts' element = {<MyPosts />} />
+              <Route path = '/createpost' element = {<CreatePost />} />
+              <Route path = '/deletepost' element = {<DeletePost />} />
+              <Route path = '/logout' element = {<Logout />} />
+              <Route path = '/editpost' element = {<EditPost />} />
+              <Route path = '/viewpost' element = {<ViewPost />} />
+            </Routes>
+      </main>
+    </div>
+  );
 };
